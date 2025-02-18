@@ -1,10 +1,35 @@
-# OS energy consumption for different browsers
+# Group 4 - The impact of OS on energy consumption
+
+## Table of Contents
+
+*   [Introduction](#introduction)
+*   [Problem](#problem)
+*   [Method](#method)
+*   [Results](#results)
+*   [Conclusion](#conclusion)
+*   [References](#references)
+
 
 ## Introduction
 
+*(Write your introduction here)*
 
-## Experiment Set-Up
+## Problem
+
+*(Define the problem you are addressing here)*
+
+
+## Method
+
+*(Explain the training procedure followed here)*
 
 ## Results
+*(Summarize Results)*
 
-## Conclusions
+## Conclusion
+
+*(Summarize your findings and conclude your blog post here)*
+
+## References
+
+*(List your references here)*
