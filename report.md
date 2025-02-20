@@ -9,7 +9,6 @@
 *   [Conclusion](#conclusion)
 *   [References](#references)
 
-
 ## Introduction
 
 *(Write your introduction here)*
@@ -17,7 +16,6 @@
 ## Problem
 
 *(Define the problem you are addressing here)*
-
 
 ## Method
 
