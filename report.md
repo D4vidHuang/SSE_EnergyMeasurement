@@ -58,13 +58,45 @@ We will utilize the **Energibridge** tool for measuring energy consumption durin
 
 To ensure our tests reflect everyday browser usage, we will design user-centric test scenarios that mimic common activities. This approach will help us gather data that is not only technical but also relatable to the average user.
 
+
+
 ## Proposed Testing Tasks
+All tests follow the same pipeline with the aim to collect reliable energy data. One iteration conists of 60s of running a process with a 60 cooldown period directly after terminating the process, with the aim of preventing tail energy consumption from affecting the next process.
 
-Baseline task: 60 seconds sleep (for both Chrome and Firefox)
++ Warm Up: 5 iterations of sleep/wait (depending on OS).
++ Main Test:
 
-30iteration 2min/iteration
+  + 30 Iterations per browser. (60 iterations total)
+  + Browsers are randomly shuffled to try to mitigate unwanted biases.
 
-60 second working and 60 pause
+
+### Baseline Test
+A baseline test is conducted on each machine used for subsequent testing, serving as a calibration step. This test consists of 30 iterations of sleep/wait instead of executing a browser test. By analyzing these results, we can better normalize the outputs of the following tests, allowing us to focus primarily on the power consumption of browsers.
+
+For a details regarding this implementation refer to: [Baseline Script](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_sleep_script.sh)
+
+
+### Reddit Test
+The Reddit test replicates a user scrolling (DOOMSCROLLINGGGG) on each browser. Bellow the function implemented in Python utilizing the Selenium library.
+
+```python
+    def browse_reddit(duration_seconds=60):
+    driver = webdriver.Firefox()  # geckodriver is assumed to be in PATH
+
+    try:
+        driver.get("https://www.reddit.com")
+
+        time.sleep(5)  # Initial wait
+
+        start_time = time.time()
+        while time.time() - start_time < duration_seconds:
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(2)  # Wait briefly between scrolls
+
+    finally:
+        driver.quit()
+```
+### Youtube Test
 
 1. Streaming Videos (YouTube): Measure energy consumption while streaming videos on YouTube, a common activity for many users.
 2. Browsing Social Media (Facebook): Assess energy usage while browsing social media platforms like Reddit, where users often spend significant time.
@@ -79,28 +111,49 @@ Baseline task: 60 seconds sleep (for both Chrome and Firefox)
   | Mozilla Firefox | 135.0         |
   | Energibridge    | v0.0.7        |
 
-+ Testing environment:
+## Testing environment:
 
-  + MacOS 15.3.1
-  + Windows
-  + Linux
+### Linux
+Machine: ASUS Zenbook 14 UX3405MA
 
-+ Environment set up
+  + Processor: Intel® Core™ Ultra 9 185H × 22
+  + Memory: 32.0 GiB
 
-  + Zen mode: 
+Operating System: Fedora Linux 41 (Workstation Edition)
 
-    The first thing we need to make sure of is that the only thing running in our system is the software we want to measure. Unfortunately, this is impossible in practice – our system will always have other tasks and things that it will run at the same time. Still, we must at least minimise all these competing tasks:
+  + Kernel Version: Linux 6.12.15-200.fc41.x86_64
+  + Windowing System: Wayland
 
-    - all applications should be closed, notifications should be turned off;
-    - only the required hardware should be connected (avoid USB drives, external disks, external displays, etc.);
-    - turn off notifications;
-    - remove any unnecessary services running in the background (e.g., web server, file sharing, etc.);
-    - if you do not need an internet or intranet connection, switch off your network;
-    - prefer cable over wireless – the energy consumption from a cable connection is more stable than from a wireless connection.
+### MacOS
+MacOS 15.3.1
 
-  + Freeze your settings: 
 
-    It is not possible to shut off the unnecessary things that run in our system. Still, we need to at least make sure that they will behave the same across all sets of experiments. Thus, we must fix and report some configuration settings. One good example is the brightness and resolution of your screen – report the exact value and make sure it stays the same throughout the experiment. Another common mistake is to keep the automatic brightness adjustment on – this is, for example, an awful source of errors when measuring energy efficiency in mobile apps.
+  **Note:** _TODO: Specify System completely_
+
+
+### Windows
+ Windows
+
+  **Note:** _TODO: Specify System completely_
+
+## Environment Setup
+
+
+
++ Zen mode: 
+
+  The first thing we need to make sure of is that the only thing running in our system is the software we want to measure. Unfortunately, this is impossible in practice – our system will always have other tasks and things that it will run at the same time. Still, we must at least minimise all these competing tasks:
+
+  - all applications should be closed, notifications should be turned off;
+  - only the required hardware should be connected (avoid USB drives, external disks, external displays, etc.);
+  - turn off notifications;
+  - remove any unnecessary services running in the background (e.g., web server, file sharing, etc.);
+  - if you do not need an internet or intranet connection, switch off your network;
+  - prefer cable over wireless – the energy consumption from a cable connection is more stable than from a wireless connection.
+
++ Freeze your settings: 
+
+  It is not possible to shut off the unnecessary things that run in our system. Still, we need to at least make sure that they will behave the same across all sets of experiments. Thus, we must fix and report some configuration settings. One good example is the brightness and resolution of your screen – report the exact value and make sure it stays the same throughout the experiment. Another common mistake is to keep the automatic brightness adjustment on – this is, for example, an awful source of errors when measuring energy efficiency in mobile apps.
 
 + 
 
@@ -108,9 +161,11 @@ Baseline task: 60 seconds sleep (for both Chrome and Firefox)
 
 ## Chrome
 
-+ macos
-+ windows
-+ Linux
+### MacOS
+### Windows
+### Linux
+
+
 
 ## FireFox
 
