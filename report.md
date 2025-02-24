@@ -205,7 +205,14 @@ This section summarizes the **macOS** test outcomes for **Chrome** and **Firefox
 ## Windows
 
 ## Linux
+This section summarizes the **macOS** test outcomes for **Chrome** and **Firefox** under two common usage scenarios: **Reddit browsing** and **YouTube video playback**. All values have been baseline-corrected using an average sleep energy measurement of **502.46 Joules**, following outlier removal.
 
+- **Figure 1**: ![Average Power Consumption by Browser (Reddit Task)](/img/reddit_power_hist_linux.png)  
+- **Figure 2**: ![Average Power Consumption by Browser (YouTube Task)](/img/yt_power_hist_linux.png)  
+- **Figure 3**: ![Reddit Browsing – Adjusted Energy Consumption by Browser](/img/reddit_power_violin_linux.png)
+- **Figure 4**: ![YouTube Playback – Adjusted Energy Consumption by Browser](/img/yt_power_violing_linux.png)
+
+---
 
 
 
