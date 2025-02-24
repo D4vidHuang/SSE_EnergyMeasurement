@@ -14,7 +14,7 @@ COMMAND_CHROME="sudo ./energibridge --summary -m 60 -- sudo -u phildo python3 ch
 SEQUENCE_LIST=($(seq 0 1 | xargs -I {} bash -c 'for i in {1..30}; do echo {}; done' | shuf))
 
 # Output CSV file
-OUTPUT_FILE="benchmark_results_reddit.csv"
+OUTPUT_FILE="benchmark_results_youtube.csv"
 
 # Create CSV header
 echo "Iteration,Browser,Energy (Joules), Time (Seconds)" > "$OUTPUT_FILE"
@@ -22,8 +22,9 @@ echo "Iteration,Browser,Energy (Joules), Time (Seconds)" > "$OUTPUT_FILE"
 echo "Starting warm-up iterations..."
 for ((i=0; i<5; i++)); do
     echo "Running warm-up iteration $((i+1)) of 5..."
-    # eval "$COMMAND_FIREFOX" > /dev/null 2>&1
-    eval "$COMMAND_CHROME" > /dev/null 2>&1
+    eval "$COMMAND_FIREFOX" > /dev/null 2>&1
+    # eval "$COMMAND_CHROME" > /dev/null 2>&1
+    echo "Sleeping for 60 seconds..."
     sleep 60
 done
 
