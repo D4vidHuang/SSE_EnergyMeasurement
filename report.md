@@ -205,16 +205,34 @@ This section summarizes the **macOS** test outcomes for **Chrome** and **Firefox
 ## Windows
 
 ## Linux
-This section summarizes the **macOS** test outcomes for **Chrome** and **Firefox** under two common usage scenarios: **Reddit browsing** and **YouTube video playback**. All values have been baseline-corrected using an average sleep energy measurement of **502.46 Joules**, following outlier removal.
+This section summarizes the **Linux** test outcomes for **Chrome** and **Firefox** under two common usage scenarios: **Reddit browsing** and **YouTube video playback**. All values have been baseline-corrected using an average sleep energy measurement of **502.46 Joules**, following outlier removal.
 
-- **Figure 1**: ![Average Power Consumption by Browser (Reddit Task)](/img/reddit_power_hist_linux.png)  
-- **Figure 2**: ![Average Power Consumption by Browser (YouTube Task)](/img/yt_power_hist_linux.png)  
-- **Figure 3**: ![Reddit Browsing – Adjusted Energy Consumption by Browser](/img/reddit_power_violin_linux.png)
-- **Figure 4**: ![YouTube Playback – Adjusted Energy Consumption by Browser](/img/yt_power_violing_linux.png)
+- **Figure 5**: ![Average Power Consumption by Browser (Reddit Task)](/img/reddit_power_hist_linux.png)  
+- **Figure 6**: ![Average Power Consumption by Browser (YouTube Task)](/img/yt_power_hist_linux.png)  
+- **Figure 7**: ![Reddit Browsing – Adjusted Energy Consumption by Browser](/img/reddit_power_violin_linux.png)
+- **Figure 8**: ![YouTube Playback – Adjusted Energy Consumption by Browser](/img/yt_power_violing_linux.png)
 
 ---
 
+### Reddit Browsing Task
+- **Baseline Average Energy (post-outlier removal):** 502.46 Joules  
+- **Data Cleaning:** No negative outliers were detected.  
+- **Statistical Analysis:**  
+  - **t-statistic:** 10.77  
+  - **p-value:** 1.81e-15  
 
+**Interpretation:** As shown in Figures 5 and 7, Chrome demonstrates a statistically significant lower energy consumption for Reddit browsing compared to Firefox. The **p-value (1.81e-15)** strongly suggests that the observed difference is unlikely due to random chance.
+
+### YouTube Playback Task
+- **Baseline Average Energy (post-outlier removal):** 502.46 Joules  
+- **Data Cleaning:** No negative outliers were detected.  
+- **Statistical Analysis:**  
+  - **t-statistic:** -0.96  
+  - **p-value:** 0.336  
+
+**Interpretation:** In Figures 6 and 8, the YouTube playback energy usage for Chrome and Firefox appears more similar. The **p-value (0.336)** indicates that the difference in average energy consumption between the two browsers is **not** statistically significant in this scenario.
+
+---
 
 # Conclusion
 
