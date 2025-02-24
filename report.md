@@ -2,7 +2,7 @@
 author: Anyan Huang, Yongcheng Huang, Yiming Chen, Philippe Henry,
 title: "The browser energy efficiency revolution"
 image: "../img/p1_measuring_software/gX_template/cover.png"
-date: 03/03/2022
+date: 28/02/2025
 summary: |-
   This study investigates the energy consumption of two popular web browsers, Google Chrome and Mozilla Firefox, under realistic user scenarios on macOS, Linux and Windows. By modeling activities such as Reddit browsing and YouTube video playback, and applying baseline-corrected measurements, we provide an empirical comparison of browser efficiency. Our findings reveal that Chrome demonstrates significantly lower energy usage than Firefox for Reddit browsing , suggesting a potential avenue for substantial power savings. In contrast, no statistically significant difference emerges for YouTube playback , indicating that both browsers perform similarly in streaming scenarios. These results highlight the importance of task-specific testing and underscore how browser choice can meaningfully impact environmental footprints, particularly in energy-intensive usage patterns.
 ---
@@ -159,8 +159,8 @@ This section summarizes the **macOS** test outcomes for **Chrome** and **Firefox
 
 - **Figure 1**: ![Average Power Consumption by Browser (Reddit Task)](/img/AvgPowerConsumptionRedditMacOS.png)  
 - **Figure 2**: ![Average Power Consumption by Browser (YouTube Task)](/img/AvgPowerConsumptionYoutubeMacOS.png)  
-- **Figure 3**: ![Reddit Browsing – Adjusted Energy Consumption by Browser](/img/RedditMacOS.png)
-- **Figure 4**: ![YouTube Playback – Adjusted Energy Consumption by Browser](/img/YoutubeMacOS.png)
+- **Figure 3**: ![Reddit Browsing – Adjusted Energy Consumption by Browser](img/AvgRedditMacOS.png)
+- **Figure 4**: ![YouTube Playback – Adjusted Energy Consumption by Browser](img/AvgPowerYoutubeMacOS.png)
 
 ---
 
