@@ -69,7 +69,7 @@ To ensure our tests accurately represent real-world browser usage, we design **u
 ## Test Protocol
 
 - **Baseline Task:** 60-second idle period. [Implementation here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_sleep_script.sh)
-- **Iterations:** 30 runs, **2 minutes per iteration** (60 seconds active, 60 seconds idle).  
+- **Iterations:** 30 runs, **2 minutes per iteration** (60 seconds active, 60 seconds idle). [Implementation here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_script.sh)  
 - **Test Cases:**
   1. **Video Streaming (YouTube):** Measure energy usage during continuous video playback.  
 
