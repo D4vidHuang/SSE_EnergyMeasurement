@@ -68,11 +68,55 @@ To ensure our tests accurately represent real-world browser usage, we design **u
 
 ## Test Protocol
 
-- **Baseline Task:** 60-second idle period (both Chrome and Firefox).  
+- **Baseline Task:** 60-second idle period. [Implementation here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_sleep_script.sh)
 - **Iterations:** 30 runs, **2 minutes per iteration** (60 seconds active, 60 seconds idle).  
 - **Test Cases:**
   1. **Video Streaming (YouTube):** Measure energy usage during continuous video playback.  
-  2. **Social Media Browsing (Reddit/Facebook):** Assess energy consumption while scrolling and interacting with content.  
+
+    ```Python
+    def play_youtube_video(duration_seconds=60):
+        driver = webdriver.Firefox()  # Ensure geckodriver is in PATH
+
+        try:
+            driver.get("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            wait = WebDriverWait(driver, 5)
+            try:
+                accept_all_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[.//span[contains(text(), 'Accept all')]]")))
+                accept_all_button.click()
+                time.sleep(5)
+            except TimeoutException:
+                print("Accept all not found")
+            try:
+                play_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(@class, 'ytp-large-play-button')]")))
+                play_button.click()
+                print("Clicked Play button.")
+            except:
+                print("Play button not found or already playing.")
+            time.sleep(duration_seconds)
+        
+        finally:
+            driver.quit()
+    ```
+
+  2. **Social Media Browsing (Reddit):** Assess energy consumption while scrolling and interacting with content.  
+
+    ```python
+      def browse_reddit(duration_seconds=60):
+      driver = webdriver.Firefox()  # geckodriver is assumed to be in PATH
+
+      try:
+          driver.get("https://www.reddit.com")
+
+          time.sleep(5)  # Initial wait
+
+          start_time = time.time()
+          while time.time() - start_time < duration_seconds:
+              driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+              time.sleep(2)  # Wait briefly between scrolls
+
+      finally:
+          driver.quit()
+    ```
 
 ## Testing Configuration
 
@@ -86,6 +130,22 @@ To ensure our tests accurately represent real-world browser usage, we design **u
 
 ### Test Environment
 
+#### Linux
+Machine: ASUS Zenbook 14 UX3405MA
+
+  + Processor: Intel® Core™ Ultra 9 185H × 22
+  + Memory: 32.0 GiB
+
+Operating System: Fedora Linux 41 (Workstation Edition)
+
+  + Kernel Version: Linux 6.12.15-200.fc41.x86_64
+  + Windowing System: Wayland
+
+#### MacOS
+
+**Note:** _TODO: Specify System completely_
+#### Windows
+**Note:** _TODO: Specify System completely_
 - **Operating Systems:** macOS 15.3.1, Windows, Linux  
 - **Hardware Constraints:** Standardized across all runs  
 
