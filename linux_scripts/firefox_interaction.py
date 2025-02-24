@@ -1,6 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 
 def browse_reddit(duration_seconds=60):
@@ -33,8 +36,32 @@ def browse_facebook(duration_seconds=60):
 
     finally:
         driver.quit()
+def play_youtube_video(duration_seconds=60):
+    driver = webdriver.Firefox()  # Ensure geckodriver is in PATH
 
+    try:
+        driver.get("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+        wait = WebDriverWait(driver, 5)
+        try:
+            #<button class="yt-spec-button-shape-next yt-spec-button-shape-next--filled yt-spec-button-shape-next--mono yt-spec-button-shape-next--size-m" aria-disabled="false" aria-label="Accept the use of cookies and other data for the purposes described" title="" style=""><div class="yt-spec-button-shape-next__button-text-content"><span class="yt-core-attributed-string yt-core-attributed-string--white-space-no-wrap" role="text">Accept all</span></div><yt-touch-feedback-shape style="border-radius: inherit;"><div class="yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response-inverse" aria-hidden="true"><div class="yt-spec-touch-feedback-shape__stroke" style=""></div><div class="yt-spec-touch-feedback-shape__fill" style=""></div></div></yt-touch-feedback-shape></button>
+            accept_all_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[.//span[contains(text(), 'Accept all')]]")))
+            accept_all_button.click()
+            time.sleep(5)
+        except TimeoutException:
+            print("Accept all not found")
+        # time.sleep(duration_seconds)
+        try:
+            play_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(@class, 'ytp-large-play-button')]")))
+            play_button.click()
+            print("Clicked Play button.")
+        except:
+            print("Play button not found or already playing.")
+        time.sleep(duration_seconds)
+    
+    finally:
+        driver.quit()
 
 if __name__ == "__main__":
-    browse_reddit()
+    # browse_reddit()  #reddit option
     # browse_facebook()  #facebook option
+    play_youtube_video()  #youtube option
