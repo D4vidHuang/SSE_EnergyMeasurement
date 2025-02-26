@@ -74,8 +74,8 @@ for ($i=0; $i -lt $COUNT; $i++) {
 
     Write-Host "Energy: $ENERGY Joules, Time: $TIME sec"
 
-    # **🔹 休息 15 秒**
-    Start-Sleep -Seconds 15
+    # **🔹 休息 60 秒**
+    Start-Sleep -Seconds 60
 }
 
 Write-Host "All iterations completed. Results saved to $OUTPUT_FILE"
