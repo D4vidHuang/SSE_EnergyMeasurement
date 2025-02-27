@@ -241,41 +241,37 @@ This section summarizes the **macOS** test outcomes for **Chrome** and **Firefox
 
 ---
 
-### Chrome
+### Reddit Browsing Task
 
-#### Reddit Browsing Task
-- **Baseline Average Energy (post-outlier removal):** 240.68 Joules  
-- **Data Cleaning:** One negative outlier (Iteration 59: –0.065 Joules) was excluded.  
-- **Statistical Analysis:**  
-  - **t-statistic:** 12.43  
-  - **p-value:** 7.20e-18  
+**Baseline Average Energy (post-outlier removal):** 240.68 Joules
 
-**Interpretation:** As shown in Figures 1 and 3, Chrome demonstrates a statistically significant lower energy consumption for Reddit browsing compared to Firefox. The **p-value (7.20e-18)** strongly suggests that the observed difference is unlikely due to random chance.
+**Data Cleaning:**
+- Excluded one negative outlier (Iteration 59: -0.065 Joules).
 
-#### YouTube Playback Task
-- **Baseline Average Energy (post-outlier removal):** 240.68 Joules  
-- **Data Cleaning:** No negative outliers were detected.  
-- **Statistical Analysis:**  
-  - **t-statistic:** 1.26  
-  - **p-value:** 0.211  
+**Statistical Analysis:**
+- **t-statistic:** 12.43  
+- **p-value:** 7.20e-18  
 
-**Interpretation:** In Figures 2 and 4, the YouTube playback energy usage for Chrome and Firefox appears more similar. The **p-value (0.211)** indicates that the difference in average energy consumption between the two browsers is **not** statistically significant in this scenario.
+**Interpretation:**
+- As shown in Figures 1 and 3, Chrome exhibits significantly lower average energy consumption than Firefox for the Reddit browsing task.  
+- The p-value (7.20e-18) indicates that the observed difference is extremely unlikely to be due to random variation, suggesting a high level of statistical significance.
 
 ---
 
-### Firefox
+### YouTube Playback Task
 
-#### Reddit Browsing Task
-- **Outcome:** Firefox generally shows higher adjusted energy usage than Chrome.  
-- **Statistical Outcome:** With a **p-value of 7.20e-18**, the difference in energy consumption between Firefox and Chrome for Reddit browsing is highly significant.
+**Baseline Average Energy (post-outlier removal):** 240.68 Joules
 
-**Interpretation:** Figures 1 and 3 reveal that Firefox’s energy consumption is noticeably greater than Chrome’s for the Reddit task, supporting the t-test result that confirms a meaningful difference.
+**Data Cleaning:**
+- No negative outliers were detected.
 
-#### YouTube Playback Task
-- **Outcome:** Firefox’s energy consumption for YouTube playback is broadly on par with Chrome’s.  
-- **Statistical Outcome:** With a **p-value of 0.211**, there is no statistically significant difference between Firefox and Chrome.
+**Statistical Analysis:**
+- **t-statistic:** 1.26  
+- **p-value:** 0.211  
 
-**Interpretation:** Figures 2 and 4 show overlapping energy distributions for both browsers. The data do not provide sufficient evidence to conclude one browser is more efficient than the other in YouTube playback.
+**Interpretation:**
+- As shown in Figures 2 and 4, the average energy consumption of Chrome and Firefox is quite similar for YouTube playback.  
+- The p-value (0.211) suggests that there is no statistically significant difference between the two browsers, making it difficult to conclude which one is more efficient in this scenario.
 
 ---
 
