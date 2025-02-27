@@ -30,13 +30,13 @@ To capture the full picture, we designed user-centric test scenarios that mimic 
 ## Test Protocol
 To accurately measure the energy consumption of browsers during typical user activities, we designed a rigorous test protocol. This protocol ensures consistency across all experiments while capturing real-world usage patterns. Here’s how we conducted our tests:
 
-Baseline Task
+### Baseline Task
 Every test began with a 60-second idle period to establish a baseline for energy consumption. This step helped us account for the system’s background energy usage, ensuring that our measurements focused solely on the browser’s activity. The implementation for this task can be found [here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_sleep_script.sh).
 
-Iterations
+### Iterations
 Each test case was repeated 30 times to ensure statistical significance. Every iteration lasted 2 minutes, divided into two phases: 60 seconds of active browsing or video playback, followed by 60 seconds of idle time. This structure allowed us to measure both the energy consumed during active use and the system’s return to baseline during idle periods. The implementation for the iteration script is available [here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_script.sh).
 
-Test Cases
+### Test Cases
 We focused on two common user activities to evaluate browser energy efficiency: video streaming and social media browsing
 
 1. **Video Streaming (YouTube):** o measure energy usage during video playback, we automated the process of playing a YouTube video using Python and Selenium. The script navigates to a specific video, clicks the play button, and monitors energy consumption for 60 seconds. Below our implementation:
@@ -88,19 +88,19 @@ We focused on two common user activities to evaluate browser energy efficiency: 
 
 ## Testing Configuration
 
-Software Versions
+### Software Versions
 We used the latest stable versions of the browsers and tools at the time of testing. Google Chrome was tested on version 133.0.6943.99, while Mozilla Firefox was evaluated on version 135.0. For energy measurement, we relied on Energibridge v0.0.7, a specialized tool that captures detailed energy consumption data during browser tasks.
 
-Test Environment
+### Test Environment
 Our experiments spanned three operating systems—Linux, MacOS, and Windows—to capture a comprehensive picture of energy efficiency across platforms.
 
-On Linux, we used an ASUS Zenbook 14 UX3405MA equipped with an Intel® Core™ Ultra 9 185H processor and 32 GB of RAM. The system ran Fedora Linux 41 (Workstation Edition) with Linux kernel version 6.12.15-200.fc41.x86_64 and the Wayland windowing system.
+On **Linux**, we used an ASUS Zenbook 14 UX3405MA equipped with an Intel® Core™ Ultra 9 185H processor and 32 GB of RAM. The system ran Fedora Linux 41 (Workstation Edition) with Linux kernel version 6.12.15-200.fc41.x86_64 and the Wayland windowing system.
 
-For MacOS, we tested on a system with specifications that will be fully detailed in the final report.
+For **MacOS**, we tested on a system with specifications that will be fully detailed in the final report.
 
-On Windows, we used a high-performance personal PC featuring an Intel® Core™ i9-12900K processor and 32 GB of RAM. The system ran Windows 11 Professional, version 23H2 (Build 22631.4890).
+On **Windows**, we used a high-performance personal PC featuring an Intel® Core™ i9-12900K processor and 32 GB of RAM. The system ran Windows 11 Professional, version 23H2 (Build 22631.4890).
 
-Experimental Controls
+### Experimental Controls
 To ensure consistency across tests, we implemented strict controls to minimize system interference and variability.
 
 First, we activated Zen Mode, a set of practices designed to reduce background activity. This involved closing all non-essential applications, disabling notifications, and disconnecting unnecessary peripherals like USB drives and external displays. We also stopped background services such as web servers and file-sharing tools. Network connectivity was carefully managed, with wired connections preferred over wireless for stability.
