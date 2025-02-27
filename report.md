@@ -96,7 +96,7 @@ Our experiments spanned three operating systems—Linux, MacOS, and Windows—to
 
 On **Linux**, we used an ASUS Zenbook 14 UX3405MA equipped with an Intel® Core™ Ultra 9 185H processor and 32 GB of RAM. The system ran Fedora Linux 41 (Workstation Edition) with Linux kernel version 6.12.15-200.fc41.x86_64 and the Wayland windowing system.
 
-For **MacOS**, we tested on a system with specifications that will be fully detailed in the final report.
+For **MacOS**, we tested on a Macbook Air M2 verion, equipped with Apple M2 chip and 16 GB of RAM. The system ran MacOS Sequoia 15.3.2.
 
 On **Windows**, we used a high-performance personal PC featuring an Intel® Core™ i9-12900K processor and 32 GB of RAM. The system ran Windows 11 Professional, version 23H2 (Build 22631.4890).
 
