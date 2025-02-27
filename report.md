@@ -231,18 +231,9 @@ From a sustainability perspective, this means that **using Chrome for Reddit bro
 
 This indicates that for **YouTube playback, both browsers perform similarly in terms of energy consumption**, meaning there is no clear advantage in choosing one over the other purely for energy efficiency purposes.
 
----
 ## Linux
 This section summarizes the **Linux** test outcomes for **Chrome** and **Firefox** under two common usage scenarios: **Reddit browsing** and **YouTube video playback**. All values have been baseline-corrected using an average sleep energy measurement of **502.46 Joules**, following outlier removal.
 
-
-
-<!-- - **Figure 5**: ![Average Power Consumption by Browser (Reddit Task)](/img/reddit_power_hist_linux.png)  
-- **Figure 6**: ![Average Power Consumption by Browser (YouTube Task)](/img/yt_power_hist_linux.png)  
-- **Figure 7**: ![Reddit Browsing – Adjusted Energy Consumption by Browser](/img/reddit_power_violin_linux.png)
-- **Figure 8**: ![YouTube Playback – Adjusted Energy Consumption by Browser](/img/yt_power_violing_linux.png) -->
-
----
 
 ### Reddit Browsing Task
 After cleaning and analyzing the data, we found that the baseline average energy consumption (post-outlier removal) was **502.46 Joules**. The statistical analysis revealed a **t-statistic of 10.77** and a **p-value of 1.81e-15**. The t-statistic indicates a substantial gap in efficiency. On the other hand, the p-value is very small, far below the standard significance threshold of 0.05. This means the probability of observing such a difference by random chance is almost zero. As shown in **Figures 5** and evidenced with the averages shown in [Table 1](#table-1-reddit-scrolling), Chrome (17.533 W) demonstrates a statistically significant lower energy consumption for Reddit browsing compared to Firefox (21.013 W).
