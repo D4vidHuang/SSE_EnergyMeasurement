@@ -235,35 +235,40 @@ This indicates that for **YouTube playback, both browsers perform similarly in t
 ## Linux
 This section summarizes the **Linux** test outcomes for **Chrome** and **Firefox** under two common usage scenarios: **Reddit browsing** and **YouTube video playback**. All values have been baseline-corrected using an average sleep energy measurement of **502.46 Joules**, following outlier removal.
 
-- **Figure 5**: ![Average Power Consumption by Browser (Reddit Task)](/img/reddit_power_hist_linux.png)  
+
+
+<!-- - **Figure 5**: ![Average Power Consumption by Browser (Reddit Task)](/img/reddit_power_hist_linux.png)  
 - **Figure 6**: ![Average Power Consumption by Browser (YouTube Task)](/img/yt_power_hist_linux.png)  
 - **Figure 7**: ![Reddit Browsing – Adjusted Energy Consumption by Browser](/img/reddit_power_violin_linux.png)
-- **Figure 8**: ![YouTube Playback – Adjusted Energy Consumption by Browser](/img/yt_power_violing_linux.png)
+- **Figure 8**: ![YouTube Playback – Adjusted Energy Consumption by Browser](/img/yt_power_violing_linux.png) -->
 
 ---
 
 ### Reddit Browsing Task
-- **Baseline Average Energy (post-outlier removal):** 502.46 Joules  
-- **Data Cleaning:** No negative outliers were detected.  
-- **Statistical Analysis:**  
-  - **t-statistic:** 10.77  
-  - **p-value:** 1.81e-15  
+After cleaning and analyzing the data, we found that the baseline average energy consumption (post-outlier removal) was **502.46 Joules**. The statistical analysis revealed a **t-statistic of 10.77** and a **p-value of 1.81e-15**. The t-statistic indicates a substantial gap in efficiency. On the other hand, the p-value is very small, far below the standard significance threshold of 0.05. This means the probability of observing such a difference by random chance is almost zero. As shown in **Figures 5** and evidenced with the averages shown in [Table 1](#table-1-reddit-scrolling), Chrome (17.533 W) demonstrates a statistically significant lower energy consumption for Reddit browsing compared to Firefox (21.013 W).
 
-**Interpretation:** As shown in Figures 5 and 7, Chrome demonstrates a statistically significant lower energy consumption for Reddit browsing compared to Firefox. The **p-value (1.81e-15)** strongly suggests that the observed difference is unlikely due to random chance.
+
+<div style="display: flex;">
+  <img src="img/reddit_power_hist_linux.png" alt="Average Power Consumption by Browser (Reddit Task)" style="width: 49%; margin-right: 1%;" />
+  <img src="img/reddit_power_violin_linux.png" alt="Average Power Consumption by Browser (YouTube Task)" style="width: 49%;" />
+</div>
+
+
 
 ### YouTube Playback Task
-- **Baseline Average Energy (post-outlier removal):** 502.46 Joules  
-- **Data Cleaning:** No negative outliers were detected.  
-- **Statistical Analysis:**  
-  - **t-statistic:** -0.96  
-  - **p-value:** 0.336  
+The statistical analysis revealed a **t-statistic of -0.96** and a **p-value of 0.336**.  On one hand the p-value is too large, indicating that the differences may be due to random variation. Along side this, the t-statistic is very small (negative!), indicating no real difference between average power consumptions. Unlike the results for reddit browsing, there seems to be no statistically significant difference between both browsers. This is further evidenced by nearly identical mean power averages as seen in [Table 2](#table-2-youtube-streaming)
 
-**Interpretation:** In Figures 6 and 8, the YouTube playback energy usage for Chrome and Firefox appears more similar. The **p-value (0.336)** indicates that the difference in average energy consumption between the two browsers is **not** statistically significant in this scenario.
+
+<div style="display: flex;">
+  <img src="img/yt_power_hist_linux.png" alt="Average Power Consumption by Browser (Reddit Task)" style="width: 49%; margin-right: 1%;" />
+  <img src="img/yt_power_violing_linux.png" alt="Average Power Consumption by Browser (YouTube Task)" style="width: 49%;" />
+</div>
 
 ---
 
 ## Results Table
-### Reddit Scrolling
+### Table 1: Reddit Scrolling
+
 Average Normalised Power in Watts
 
 |          | Linux         | Windows         | MacOS                      |
@@ -271,7 +276,8 @@ Average Normalised Power in Watts
 | **Firefox**  | 21.013 | Text is centered | And this is right-aligned  |
 | **Chrome**   | 17.553    | Even more text   | And even more to the right |
 
-### Youtube Streaming
+### Table 2: Youtube Streaming
+
 Average Normalised Power in Watts
 
 |          | Linux         | Windows         | MacOS                      |
