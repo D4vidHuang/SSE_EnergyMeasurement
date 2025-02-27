@@ -336,18 +336,20 @@ This section summarizes the **Linux** test outcomes for **Chrome** and **Firefox
 
 ## Results Table
 ### Reddit Scrolling
+Average Normalised Power in Watts
 
 |          | Linux         | Windows         | MacOS                      |
 |----------|:-------------:|:---------------:|:---------------------------:|
-| **Firefox**  | avgLinuxFirefox | Text is centered | And this is right-aligned  |
-| **Chrome**   | avgLinux Chrome    | Even more text   | And even more to the right |
+| **Firefox**  | 21.013 | Text is centered | And this is right-aligned  |
+| **Chrome**   | 17.553    | Even more text   | And even more to the right |
 
 ### Youtube Streaming
+Average Normalised Power in Watts
 
 |          | Linux         | Windows         | MacOS                      |
 |----------|:-------------:|:---------------:|:---------------------------:|
-| **Firefox**  | avgLinuxFirefox | Text is centered | And this is right-aligned  |
-| **Chrome**   | avgLinux Chrome    | Even more text   | And even more to the right |
+| **Firefox**  | 16.928 | Text is centered | And this is right-aligned  |
+| **Chrome**   | 17.108    | Even more text   | And even more to the right |
 
 # Conclusion
 
