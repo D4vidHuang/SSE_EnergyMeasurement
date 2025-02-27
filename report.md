@@ -334,6 +334,21 @@ This section summarizes the **Linux** test outcomes for **Chrome** and **Firefox
 
 ---
 
+## Results Table
+### Reddit Scrolling
+
+|          | Linux         | Windows         | MacOS                      |
+|----------|:-------------:|:---------------:|:---------------------------:|
+| **Firefox**  | avgLinuxFirefox | Text is centered | And this is right-aligned  |
+| **Chrome**   | avgLinux Chrome    | Even more text   | And even more to the right |
+
+### Youtube Streaming
+
+|          | Linux         | Windows         | MacOS                      |
+|----------|:-------------:|:---------------:|:---------------------------:|
+| **Firefox**  | avgLinuxFirefox | Text is centered | And this is right-aligned  |
+| **Chrome**   | avgLinux Chrome    | Even more text   | And even more to the right |
+
 # Conclusion
 
 By focusing on user-centric scenarios and emphasizing the real-world impact of our findings, this project aims to provide valuable insights into the energy consumption of web browsers. Through our testing, we hope to encourage users to make informed decisions that contribute to a more sustainable digital environment.
