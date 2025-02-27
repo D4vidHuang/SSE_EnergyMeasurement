@@ -15,6 +15,17 @@ summary: |-
 # Group 4 - The browser energy efficiency revolution: An empirical study of energy consumption from the perspective of user behavior
 
 
+When 3.7 billion browser users scroll through social media feeds, watch videos, or browse the web, they’re often unaware of the hidden energy consumption differences quietly shaping the digital world’s carbon footprint. These differences might seem small on an individual level, but when scaled across billions of users, they add up to significant environmental impacts.
+
+In this study, we set out to uncover the energy efficiency of everyday web browsing by using an automated testing framework. For the first time, we modeled real user behaviors—like watching YouTube videos and scrolling through Reddit—to measure how much energy popular browsers consume. We compared Firefox 121 and Chrome 122 across three operating systems: MacOS 15.3.1, Fedora, and Windows 11. Using advanced system-level energy isolation techniques, we ensured our measurements were precise and reflective of real-world usage.
+
+Our research aimed to answer critical questions: Is there a meaningful difference in energy efficiency between browsers? How do user behaviors amplify these differences? And can switching browsers or operating systems lead to scalable energy savings? These questions aren’t just technical—they have real-world implications for users, organizations, and the planet
+
+To make these findings actionable, we analyzed user statistics to understand how many people use Firefox across different operating systems. By calculating the potential energy savings of browser migration strategies, we provide practical insights for individuals and organizations looking to reduce their environmental impact.
+
+Our testing methodology focused on two of the most widely used browsers: Google Chrome, known for its speed and feature-rich experience, and Mozilla Firefox, which prioritizes privacy and customization. We used a specialized tool called Energibridge to measure energy consumption during common tasks, ensuring our data was both accurate and relevant to real-world usage.
+
+To capture the full picture, we designed user-centric test scenarios that mimic everyday activities, like streaming videos and browsing content-heavy websites. These scenarios go beyond technical benchmarks, offering practical insights into how small choices—like which browser to use—can have a big impact on energy consumption.
 ## Table of Contents
 
 
