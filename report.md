@@ -144,10 +144,16 @@ Operating System: Fedora Linux 41 (Workstation Edition)
 #### MacOS
 
 **Note:** _TODO: Specify System completely_
-#### Windows
-**Note:** _TODO: Specify System completely_
-- **Operating Systems:** macOS 15.3.1, Windows, Linux  
-- **Hardware Constraints:** Standardized across all runs  
+
+#### Windows  
+**Machine:** Personal PC  
+  - **Processor:** Intel® Core™ i9-12900K  
+  - **Memory:** 32.0 GiB  
+
+**Operating System:** Windows 11 Professional  
+  - **Version:** 23H2 (Build 22631.4890)  
+
+ 
 
 ### Experimental Controls
 
@@ -264,6 +270,40 @@ This section summarizes the **macOS** test outcomes for **Chrome** and **Firefox
 
 ## Windows
 
+This section summarizes the **Windows** test outcomes for **Chrome** and **Firefox** under two common usage scenarios: **Reddit browsing** and **YouTube video playback**. All values have been baseline-corrected using an average sleep energy measurement of **455.0382 Joules**, following outlier removal.
+
+- **Figure 1**: ![Average Power Consumption by Browser (Reddit Task)](img/win-reddit.jpg)  
+- **Figure 2**: ![Average Power Consumption by Browser (YouTube Task)](img/win-youtube.jpg)  
+
+---
+
+### Reddit Browsing Task
+- **Figure 3**: ![Reddit Browsing – Adjusted Energy Consumption by Browser](img/win-vio-reddit.jpg)  
+- **Baseline Average Energy (post-outlier removal):** 455.0382 Joules  
+- **Data Cleaning:** No negative outliers were detected.  
+- **Statistical Analysis:**  
+  - **t-statistic:** 19.22  
+  - **p-value:** 7.80e-27  
+
+**Interpretation:** As shown in Figures 1 and 3, Chrome demonstrates a statistically significant lower energy consumption for Reddit browsing compared to Firefox. The **p-value (7.80e-27)** confirms that this difference is highly significant and unlikely due to random chance.
+
+From a sustainability perspective, this means that **using Chrome for Reddit browsing could result in measurable energy savings**, reducing power consumption and contributing to a lower environmental footprint. Over time, this could lead to more efficient resource use and lower electricity costs for users.
+
+---
+
+### YouTube Playback Task
+- **Figure 4**: ![YouTube Playback – Adjusted Energy Consumption by Browser](img/win-vio-youtube.jpg)  
+- **Baseline Average Energy (post-outlier removal):** 455.0382 Joules  
+- **Data Cleaning:** No negative outliers were detected.  
+- **Statistical Analysis:**  
+  - **t-statistic:** -1.88  
+  - **p-value:** 0.0652  
+
+**Interpretation:** In Figures 2 and 4, the YouTube playback energy usage for Chrome and Firefox appears more similar. The **p-value (0.0652)** suggests that the difference in average energy consumption is **not statistically significant** at the 0.05 threshold, although it is marginally close.
+
+This indicates that for **YouTube playback, both browsers perform similarly in terms of energy consumption**, meaning there is no clear advantage in choosing one over the other purely for energy efficiency purposes.
+
+---
 ## Linux
 This section summarizes the **Linux** test outcomes for **Chrome** and **Firefox** under two common usage scenarios: **Reddit browsing** and **YouTube video playback**. All values have been baseline-corrected using an average sleep energy measurement of **502.46 Joules**, following outlier removal.
 
