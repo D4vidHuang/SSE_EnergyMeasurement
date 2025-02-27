@@ -26,167 +26,88 @@ To make these findings actionable, we analyzed user statistics to understand how
 Our testing methodology focused on two of the most widely used browsers: Google Chrome, known for its speed and feature-rich experience, and Mozilla Firefox, which prioritizes privacy and customization. We used a specialized tool called Energibridge to measure energy consumption during common tasks, ensuring our data was both accurate and relevant to real-world usage.
 
 To capture the full picture, we designed user-centric test scenarios that mimic everyday activities, like streaming videos and browsing content-heavy websites. These scenarios go beyond technical benchmarks, offering practical insights into how small choices—like which browser to use—can have a big impact on energy consumption.
-## Table of Contents
-
-
-# Introduction
-
-
-When 3.7 billion browser users scroll through social media feeds, hidden energy consumption differences quietly alter the digital world's carbon footprint. This study, through an automated testing framework, achieves the following for the first time:
-
-1. **Modeling Real User Behavior** (YouTube watching, Reddit browsing)
-2. **Cross-Browser Energy Benchmarking** (Firefox 121 vs. Chrome 122)
-3. **System-Level Energy Isolation Measurement Techniques** (MacOS15.3.1, Fedora, Windows11)
-4. **Statistical Significance Validation**
-
-## Research Questions
-
-- Is there a statistically significant difference in energy efficiency between different browsers in typical user scenarios? 
-- How do user behavior patterns amplify the energy impact of browser choice?
-- Does the energy-saving benefit of browser/operating system migration strategies have scalable application value?
-
-## Key Findings:
-
-**TODO: Change this to the actual data**
-
-Our experiments reveal that, in typical usage scenarios, **Chrome consumes xxxx less energy on average compared to Firefox**, leading to an annual CO₂ reduction of **xxxx per user**. 
-
-If **xxxx of global Firefox users switched to Chrome**, the estimated annual energy savings would reach **xxxx million kWh**—enough to power **xxx households for an entire year**.
-
-
-
--------------------------------------------------------------------------------------------------------------------------------------------------------
-
-# Assessing Real-World Impact
-
-To make our findings more relevant, we will investigate user statistics to understand the number of Firefox users across different operating systems. By calculating potential energy savings based on the average energy consumption difference between the two browsers, we can provide actionable insights for users and organizations alike.
-
-In our testing, we will focus on several software applications that are commonly used by individuals and organizations. The primary tools under test will include:
-
-+ **Google Chrome**: A widely used web browser known for its speed and extensive feature set.
-
-+ **Mozilla Firefox** : An open-source browser that emphasizes privacy and customization.
-
-We will utilize the **Energibridge** tool for measuring energy consumption during our tests. This tool allows us to capture detailed energy usage data while running various browser tasks. By employing this software, we can ensure that our measurements are accurate and reflective of real-world usage scenarios.
-
-
-
-
-
-# User-Centric Test Scenarios
-
-To ensure our tests accurately represent real-world browser usage, we design **user-centric scenarios** that capture typical activities. This approach provides practical insights into energy consumption beyond purely technical measurements.
 
 ## Test Protocol
+To accurately measure the energy consumption of browsers during typical user activities, we designed a rigorous test protocol. This protocol ensures consistency across all experiments while capturing real-world usage patterns. Here’s how we conducted our tests:
 
-- **Baseline Task:** 60-second idle period. [Implementation here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_sleep_script.sh)
-- **Iterations:** 30 runs, **2 minutes per iteration** (60 seconds active, 60 seconds idle). [Implementation here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_script.sh)  
-- **Test Cases:**
-  1. **Video Streaming (YouTube):** Measure energy usage during continuous video playback.  
+Baseline Task
+Every test began with a 60-second idle period to establish a baseline for energy consumption. This step helped us account for the system’s background energy usage, ensuring that our measurements focused solely on the browser’s activity. The implementation for this task can be found [here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_sleep_script.sh).
 
-    ```Python
-    def play_youtube_video(duration_seconds=60):
-        driver = webdriver.Firefox()  # Ensure geckodriver is in PATH
+Iterations
+Each test case was repeated 30 times to ensure statistical significance. Every iteration lasted 2 minutes, divided into two phases: 60 seconds of active browsing or video playback, followed by 60 seconds of idle time. This structure allowed us to measure both the energy consumed during active use and the system’s return to baseline during idle periods. The implementation for the iteration script is available [here](https://github.com/D4vidHuang/SSE_EnergyMeasurement/blob/linux_test/linux_scripts/auto_script.sh).
 
-        try:
-            driver.get("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            wait = WebDriverWait(driver, 5)
-            try:
-                accept_all_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[.//span[contains(text(), 'Accept all')]]")))
-                accept_all_button.click()
-                time.sleep(5)
-            except TimeoutException:
-                print("Accept all not found")
-            try:
-                play_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(@class, 'ytp-large-play-button')]")))
-                play_button.click()
-                print("Clicked Play button.")
-            except:
-                print("Play button not found or already playing.")
-            time.sleep(duration_seconds)
-        
-        finally:
-            driver.quit()
-    ```
+Test Cases
+We focused on two common user activities to evaluate browser energy efficiency: video streaming and social media browsing
 
-  2. **Social Media Browsing (Reddit):** Assess energy consumption while scrolling and interacting with content.  
+1. **Video Streaming (YouTube):** o measure energy usage during video playback, we automated the process of playing a YouTube video using Python and Selenium. The script navigates to a specific video, clicks the play button, and monitors energy consumption for 60 seconds. Below our implementation:
 
-    ```python
-      def browse_reddit(duration_seconds=60):
-      driver = webdriver.Firefox()  # geckodriver is assumed to be in PATH
+  ```Python
+  def play_youtube_video(duration_seconds=60):
+      driver = webdriver.Firefox()  # Ensure geckodriver is in PATH
 
       try:
-          driver.get("https://www.reddit.com")
-
-          time.sleep(5)  # Initial wait
-
-          start_time = time.time()
-          while time.time() - start_time < duration_seconds:
-              driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-              time.sleep(2)  # Wait briefly between scrolls
-
+          driver.get("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          wait = WebDriverWait(driver, 5)
+          try:
+              accept_all_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[.//span[contains(text(), 'Accept all')]]")))
+              accept_all_button.click()
+              time.sleep(5)
+          except TimeoutException:
+              print("Accept all not found")
+          try:
+              play_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(@class, 'ytp-large-play-button')]")))
+              play_button.click()
+              print("Clicked Play button.")
+          except:
+              print("Play button not found or already playing.")
+          time.sleep(duration_seconds)
+      
       finally:
           driver.quit()
-    ```
+  ```
+
+2. **Social Media Browsing (Reddit):** To assess energy consumption during social media use, we automated scrolling through Reddit. The script loads the Reddit homepage, waits for the page to load, and then simulates user scrolling for 60 seconds. Below our implementation: 
+
+  ```python
+    def browse_reddit(duration_seconds=60):
+    driver = webdriver.Firefox()  # geckodriver is assumed to be in PATH
+
+    try:
+        driver.get("https://www.reddit.com")
+
+        time.sleep(5)  # Initial wait
+
+        start_time = time.time()
+        while time.time() - start_time < duration_seconds:
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(2)  # Wait briefly between scrolls
+
+    finally:
+        driver.quit()
+  ```
 
 ## Testing Configuration
 
-### Software Versions
+Software Versions
+We used the latest stable versions of the browsers and tools at the time of testing. Google Chrome was tested on version 133.0.6943.99, while Mozilla Firefox was evaluated on version 135.0. For energy measurement, we relied on Energibridge v0.0.7, a specialized tool that captures detailed energy consumption data during browser tasks.
 
-| Component        | Version       |
-|-----------------|--------------|
-| Google Chrome   | 133.0.6943.99 |
-| Mozilla Firefox | 135.0         |
-| Energibridge    | v0.0.7        |
+Test Environment
+Our experiments spanned three operating systems—Linux, MacOS, and Windows—to capture a comprehensive picture of energy efficiency across platforms.
 
-### Test Environment
+On Linux, we used an ASUS Zenbook 14 UX3405MA equipped with an Intel® Core™ Ultra 9 185H processor and 32 GB of RAM. The system ran Fedora Linux 41 (Workstation Edition) with Linux kernel version 6.12.15-200.fc41.x86_64 and the Wayland windowing system.
 
-#### Linux
-Machine: ASUS Zenbook 14 UX3405MA
+For MacOS, we tested on a system with specifications that will be fully detailed in the final report.
 
-  + Processor: Intel® Core™ Ultra 9 185H × 22
-  + Memory: 32.0 GiB
+On Windows, we used a high-performance personal PC featuring an Intel® Core™ i9-12900K processor and 32 GB of RAM. The system ran Windows 11 Professional, version 23H2 (Build 22631.4890).
 
-Operating System: Fedora Linux 41 (Workstation Edition)
+Experimental Controls
+To ensure consistency across tests, we implemented strict controls to minimize system interference and variability.
 
-  + Kernel Version: Linux 6.12.15-200.fc41.x86_64
-  + Windowing System: Wayland
+First, we activated Zen Mode, a set of practices designed to reduce background activity. This involved closing all non-essential applications, disabling notifications, and disconnecting unnecessary peripherals like USB drives and external displays. We also stopped background services such as web servers and file-sharing tools. Network connectivity was carefully managed, with wired connections preferred over wireless for stability.
 
-#### MacOS
+Next, we employed Configuration Freezing to lock key settings and eliminate variability. Display brightness and resolution were fixed at consistent values, and automatic brightness adjustment was disabled. Power management features, including dynamic power-saving modes, were turned off to prevent fluctuations in energy usage. Network conditions were stabilized to ensure consistent performance during tests.
 
-**Note:** _TODO: Specify System completely_
-
-#### Windows  
-**Machine:** Personal PC  
-  - **Processor:** Intel® Core™ i9-12900K  
-  - **Memory:** 32.0 GiB  
-
-**Operating System:** Windows 11 Professional  
-  - **Version:** 23H2 (Build 22631.4890)  
-
- 
-
-### Experimental Controls
-
-#### **Zen Mode (Minimized System Interference)**  
-To ensure consistency, we reduce system background activity as follows:  
-
-- Close all non-essential applications.  
-- Disable notifications.  
-- Disconnect unnecessary peripherals (USB drives, external displays, etc.).  
-- Stop background services (e.g., web servers, file-sharing tools).  
-- Disable network connectivity if not required.  
-- Prefer wired connections over wireless for stability.  
-
-#### **Configuration Freezing (Eliminating Variability)**  
-To maintain test consistency, we **fix and document** key settings:  
-
-- **Display Configuration:** Lock brightness and resolution to a fixed value.  
-- **Power Management:** Disable automatic brightness adjustment and dynamic power-saving features.  
-- **Network Conditions:** Ensure stable network settings to prevent fluctuations in energy usage.  
-
-By enforcing strict experimental controls, we **minimize variability** and ensure the reproducibility of our results.
-
+By enforcing these rigorous controls, we minimized external factors that could skew our results. This approach not only ensures the accuracy of our findings but also makes it possible for others to reproduce our experiments under the same conditions.
 
 # Statistical Significance Testing Formulas
 
