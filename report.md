@@ -284,7 +284,7 @@ Percentage of market share, based on [statcounter](https://gs.statcounter.com/os
 |:-------------:|:---------------:|:---------------------------:|
  | 3.72% | 71.9% | 15.02%  |
 
-### Table : Browser Usage Worldwide (Desktop)
+### Table 4: Browser Usage Worldwide (Desktop)
 
 Percentage of maket share, basedo n [statcounter](https://gs.statcounter.com/browser-market-share/desktop/worldwide)
 
@@ -297,14 +297,11 @@ Percentage of maket share, basedo n [statcounter](https://gs.statcounter.com/bro
 
 ## Browsers
 
-When comparing the average power consumption of Firefox and Chrome during scrolling tasks, Firefox appears to be less efficient, consuming around 4 Watts more than Chrome across all operating systems. This difference has significant implications at scale. Assuming 1 billion daily users spend an average of [143 minutes](https://www.statista.com/statistics/433871/daily-social-media-usage-worldwide/) scrolling through social media, Firefox users would consume approximately 572 additional Watt-hours per person compared to Chrome users. With an estimated 62.6 million Firefox desktop users, this results in an extra 35,807 kilowatt-hours of energy consumed daily. This highlights the importance of optimizing browser efficiency to reduce energy consumption globally, also leading us to recommend the usage of Chrome for daily browsing.
+When comparing the average power consumption of Firefox and Chrome during scrolling tasks, Firefox appears to be less efficient, consuming around 4 Watts more than Chrome (for the most extreme case). This difference has significant implications at scale. Assuming 1 billion daily users spend an average of [143 minutes](https://www.statista.com/statistics/433871/daily-social-media-usage-worldwide/) scrolling through social media, Firefox users would consume approximately 572 additional Watts per person compared to Chrome users. With an estimated 62.6 million (based on [table 4](#table-4-browser-usage-worldwide-desktop)) Firefox desktop users, this results in an extra 35,807 kilowatts of energy consumed daily. This highlights the importance of optimizing browser efficiency to reduce energy consumption globally, also leading us to recommend the usage of Chrome for daily browsing.
 
 ## Operating Systems
 
-
-
-
-By focusing on user-centric scenarios and emphasizing the real-world impact of our findings, this project aims to provide valuable insights into the energy consumption of web browsers. Through our testing, we hope to encourage users to make informed decisions that contribute to a more sustainable digital environment.
+When comparing power consumption across operating systems, Windows stands out as the least efficient, reaching an average of ******32 CHANGE PLEASE ALONG WITH THE CALCULATION THAT F FOLLOWS****** Watts during browsing tasks. Linux follows with a maximum of 21 Watts, while MacOS is the most efficient at just 5 Watts. These differences become significant when scaled globally. With 719 million Windows users compared to 3.72 million Linux users ([table 4](#table-3-operating-system-usage-worldwide-desktop)) (again assuming 1 Billion users), the 715 million additional Windows users consume approximately 11 Watts more per minute than Linux users. Over an average daily social media usage of 143 minutes, this results in 2,971 additional Watts per person. At scale, this leads to an excess of **2.12 million** kilowatts per day due to Windows' higher energy consumption during browsing. This is only for windows, the difference is larger with MacOS, with a similar calculation leading to **2.19 million** kilowatts extra being consumed by Windows users than MacOS users, this is similar to the amount of energy a Nuclear Power plant produces. This leads us to recommend, above anything else, not to utilize windows systems.
 
 # Limitations
 Despite the valuable insights derived from our user-centric energy consumption measurements, this study has certain limitations. We only tested two browsers, Chrome and Firefox, in specific versions, leaving other browsers like Safari, Edge, or older releases unexamined. Our usage scenarios—YouTube playback and Reddit browsing—represent only a fraction of real-world browsing behaviors, which can include gaming, multi-tab usage, and complex web applications. Additionally, the hardware environments for Linux, macOS, and Windows were restricted to specific devices, limiting the broader applicability of our findings. Network conditions, which we attempted to standardize, may also vary greatly in practice and influence energy usage. Lastly, although we minimized background processes, real-world situations often involve concurrent tasks (e.g., antivirus scans, syncing) not fully represented in our controlled tests.
