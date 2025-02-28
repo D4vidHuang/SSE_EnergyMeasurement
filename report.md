@@ -264,8 +264,8 @@ Average Normalised Power in Watts
 
 |          | Linux         | Windows         | MacOS                      |
 |----------|:-------------:|:---------------:|:---------------------------:|
-| **Firefox**  | 21.013 | Text is centered | And this is right-aligned  |
-| **Chrome**   | 17.553    | Even more text   | And even more to the right |
+| **Firefox**  | 21.013 | Text is centered | 5.113  |
+| **Chrome**   | 17.553    | Even more text   | 2.353 |
 
 ### Table 2: Youtube Streaming
 
@@ -273,8 +273,8 @@ Average Normalised Power in Watts
 
 |          | Linux         | Windows         | MacOS                      |
 |----------|:-------------:|:---------------:|:---------------------------:|
-| **Firefox**  | 16.928 | Text is centered | And this is right-aligned  |
-| **Chrome**   | 17.108    | Even more text   | And even more to the right |
+| **Firefox**  | 16.928 | Text is centered | 3.503  |
+| **Chrome**   | 17.108    | Even more text   | 3.736 |
 
 ### Table 3: Operating System Usage Worldwide (Desktop)
 
