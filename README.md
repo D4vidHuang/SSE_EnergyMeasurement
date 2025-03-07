@@ -1,6 +1,7 @@
-# Sustainable Software Engineering
-
-+ `youtube_test.py` is for testing automation.
-+ `test.ipynb` is for measuring energy consumption.
-+ Energibridge release version is under `release-energibridge` folder.
-+ Discussion notes are taken here https://docs.google.com/document/d/1P79lOEAtlPZyVTWeRFqQFOOce0cqnqpO0p3-hcC3Hv8/edit?usp=sharing
+**🪟 Windows Branch (`windows`):**
+- `windows/` folder:
+  - `benchmarks/`: Contains Python scripts for browser benchmarking.
+  - `energibridge/`: The tool used for energy measurement.
+  - `results/`: Stores output data from benchmark tests.
+  - `benchmark_test.ps1`: Runs browser benchmark and energy measurement.
+  - `sleep_test.ps1`: Executes energy measurement in sleep mode.
